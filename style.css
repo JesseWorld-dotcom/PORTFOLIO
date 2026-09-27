@@ -1164,6 +1164,30 @@ line-height: 1.7;
     scroll-behavior: smooth;
     scroll-snap-type: x mandatory;
     anchor-name: --anchor;
+    scroll-marker-group: after;
+}
+
+.scroll-container::scroll-marker-group{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-2);
+    height: 20px;
+    margin-bottom: 20px;
+}
+
+.scroll-card::scroll-marker{
+    content: "";
+    width: 1rem;
+    height: 1rem;
+    background-color: var(--card-clr);
+    border-radius: 50%;
+}
+.scroll-card::scroll-marker:target-current{
+    content: "";
+    width: 1rem;
+    height: 1rem;
+    background-color: var(--color-primary);
 }
 
 .scroll-container::scroll-button(right), .scroll-container::scroll-button(left){
@@ -1229,8 +1253,6 @@ display: none;
 .scroll-card {
 scroll-snap-align: start;
 flex: 0 0 32.1%;
-
-
 }
 
 /* PROJECT CARD */
